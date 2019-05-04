@@ -9,5 +9,7 @@
         <item name="android:fontFamily">@font/productsans</item>
         <item name="android:statusBarColor">@color/light_yellow</item>
     </style>
-
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">    
+        <item name="android:textColor">@color/light_yellow</item>
+    </style>
 </resources>

@@ -109,6 +109,10 @@ public class sign_up_activity extends AppCompatActivity {
                 });
     }
 
+    public void cancel(View view){
+        finish();
+    }
+
     public void makeSnackbar(String message){
         Snackbar.make(findViewById(R.id.signup_password_edit_text),message,Snackbar.LENGTH_SHORT).show();
     }
