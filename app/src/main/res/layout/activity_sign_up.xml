@@ -70,7 +70,7 @@
                 app:hintTextAppearance="@style/TextAppearance.AppCompat">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/username_edit_text"
+                    android:id="@+id/signup_username_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
@@ -104,14 +104,14 @@
                 app:hintTextAppearance="@style/TextAppearance.AppCompat">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/email_edit_text"
+                    android:id="@+id/signup_email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
                     android:autoSizeMinTextSize="18sp"
                     android:fontFamily="@font/productsans"
                     android:hint="Email"
-                    android:inputType="text"
+                    android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:paddingStart="7dp"
                     android:paddingTop="10dp"
@@ -141,14 +141,14 @@
                 app:hintTextAppearance="@style/TextAppearance.AppCompat">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/password_edit_text"
+                    android:id="@+id/signup_password_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
                     android:autoSizeMinTextSize="18sp"
                     android:fontFamily="@font/productsans"
                     android:hint="Password"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:maxLines="1"
                     android:paddingStart="7dp"
                     android:paddingTop="10dp"
@@ -201,6 +201,7 @@
             android:fontFamily="@font/productsans"
             android:padding="10dp"
             android:text="Confirm"
+            android:onClick="signup"
             android:textAllCaps="false"
             android:textColor="@color/light_yellow"
             android:textSize="18sp"

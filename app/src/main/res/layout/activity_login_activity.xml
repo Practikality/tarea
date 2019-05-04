@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -30,13 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo_layout"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="30dp"
         android:elevation="20dp"
         android:minHeight="380dp"
-        android:outlineAmbientShadowColor="@android:color/black"
         app:cardBackgroundColor="#261E1D"
+        app:cardUseCompatPadding="true"
         app:cardCornerRadius="30dp"
         app:strokeColor="@android:color/black">
 
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="30dp"
-                android:fontFamily="@font/productsans"
+                android:fontFamily="@font/productsans_bold"
                 android:text="@string/login_head"
                 android:textColor="@color/light_yellow"
                 android:textSize="33sp" />
@@ -144,6 +144,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
                 android:clickable="true"
+                android:onClick="gotosignup"
                 android:fontFamily="@font/productsans"
                 android:text="@string/sign_up_head"
                 android:textColor="@color/light_yellow"
