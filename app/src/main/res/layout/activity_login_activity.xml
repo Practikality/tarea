@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/logo_layout"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         app:cardBackgroundColor="#261E1D"
         app:cardCornerRadius="30dp"
@@ -55,6 +55,7 @@
                 android:textColor="@color/light_yellow"
                 android:textSize="33sp" />-->
 
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/email_edit_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -63,27 +64,27 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="20dp"
-                android:minHeight="30dp"
+                android:padding="0dp"
                 android:textColorHint="@color/light_yellow"
                 app:boxStrokeColor="@color/light_yellow"
                 app:hintAnimationEnabled="true"
                 app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/email_edit_text"
+                    android:id="@+id/login_email_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
                     android:autoSizeMinTextSize="18sp"
                     android:fontFamily="@font/productsans"
-                    android:hint="User"
+                    android:hint="Username"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="14dp"
                     android:textColor="@color/light_yellow"
                     android:textColorHighlight="@color/light_yellow"
                     android:textColorHint="@color/light_yellow"
-                    android:textSize="22sp" />
+                    android:textSize="18sp" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -95,13 +96,14 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:padding="0dp"
                 android:textColorHint="@color/light_yellow"
                 app:boxStrokeColor="@color/light_yellow"
                 app:hintAnimationEnabled="true"
                 app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/password_edit_text"
+                    android:id="@+id/login_password_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
@@ -110,12 +112,12 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:padding="10dp"
+                    android:padding="14dp"
                     android:textColor="@color/light_yellow"
                     android:textColorHighlight="@color/light_yellow"
                     android:textColorHint="@color/light_yellow"
                     android:textColorLink="@color/light_yellow"
-                    android:textSize="22sp" />
+                    android:textSize="18sp" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.button.MaterialButton
@@ -132,6 +134,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="Login"
+                android:onClick="login"
                 android:textAllCaps="false"
                 android:textColor="@color/background_black"
                 android:textSize="22sp"

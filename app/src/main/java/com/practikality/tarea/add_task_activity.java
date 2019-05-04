@@ -37,7 +37,6 @@ public class add_task_activity extends AppCompatActivity implements View.OnClick
         radioGroup = (RadioGroup) findViewById(R.id.priority_radio_group);
         radioGroup.clearCheck();
         RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
-        radioButton.getText(); //Priority chosen by the user
 
         from_edit_text = (EditText) findViewById(R.id.add_task_from_text);
         to_edit_text = (EditText) findViewById(R.id.add_task_to_text);

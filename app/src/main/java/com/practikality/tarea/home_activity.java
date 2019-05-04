@@ -1,10 +1,14 @@
 package com.practikality.tarea;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.bottomappbar.BottomAppBar;
 import android.support.design.bottomnavigation.LabelVisibilityMode;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,11 +16,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class home_activity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     FloatingActionButton floatingActionButton;
     BottomAppBar bottomAppBar;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    private ProgressDialog mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +41,18 @@ public class home_activity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO: Add task function
+                startActivity(new Intent(home_activity.this, add_task_activity.class));
             }
         });
 
-
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        if(firebaseUser==null){
+            startActivity(new Intent(home_activity.this,login_activity.class));
+            finish();
+        }
+        db = FirebaseFirestore.getInstance();
+        mProgress = new ProgressDialog(this);
     }
 
     @Override
@@ -56,5 +74,25 @@ public class home_activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle("Want to logout?");
 
+        alertDialogBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                mAuth.signOut();
+                startActivity(new Intent(home_activity.this, login_activity.class));
+                finish();
+            }
+        });
+        alertDialogBuilder.setNeutralButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        alertDialogBuilder.show();
+    }
 }
