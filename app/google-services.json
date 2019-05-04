@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "591529979499",
+    "firebase_url": "https://tarea-82fee.firebaseio.com",
+    "project_id": "tarea-82fee",
+    "storage_bucket": "tarea-82fee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591529979499:android:98a73f0136be4ccb",
+        "android_client_info": {
+          "package_name": "com.practikality.tarea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591529979499-j9l1r2o926bqjoshtbmbb7lvcj6f11ng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.practikality.tarea",
+            "certificate_hash": "74031f0ee4530498a125f0e45ee7cb43fc9c6453"
+          }
+        },
+        {
+          "client_id": "591529979499-l8r0fls704j2lueo3u63lq6tg7a2p5e4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPCQYuf5gSAAMNUrxIXI5WKD9sP3-7gZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591529979499-l8r0fls704j2lueo3u63lq6tg7a2p5e4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
