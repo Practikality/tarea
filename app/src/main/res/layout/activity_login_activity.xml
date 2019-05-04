@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/yellow_background"
-    tools:context=".sign_up_activity">
+    tools:context=".login_activity">
 
     <LinearLayout
         android:id="@+id/logo_layout"
@@ -45,59 +45,25 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/sign_up_head"
+                android:id="@+id/login_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="30dp"
                 android:fontFamily="@font/productsans"
-                android:text="@string/sign_up_head"
+                android:text="@string/login_head"
                 android:textColor="@color/light_yellow"
                 android:textSize="33sp" />
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/username_edit_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/sign_up_head"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:minHeight="30dp"
-                android:textColorHint="@color/light_yellow"
-                app:boxStrokeColor="@color/light_yellow"
-                app:hintAnimationEnabled="true"
-                app:hintTextAppearance="@style/TextAppearance.AppCompat">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/username_edit_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:autoSizeMinTextSize="18sp"
-                    android:fontFamily="@font/productsans"
-                    android:hint="Username"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:paddingStart="7dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="10dp"
-                    android:textColor="@color/light_yellow"
-                    android:textColorHighlight="@color/light_yellow"
-                    android:textColorHint="@color/light_yellow"
-                    android:textSize="18sp" />
-            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/email_edit_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/username_edit_layout"
+                android:layout_below="@id/login_head"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:minHeight="30dp"
                 android:textColorHint="@color/light_yellow"
                 app:boxStrokeColor="@color/light_yellow"
                 app:hintAnimationEnabled="true"
@@ -120,7 +86,6 @@
                     android:textColor="@color/light_yellow"
                     android:textColorHighlight="@color/light_yellow"
                     android:textColorHint="@color/light_yellow"
-                    android:textColorLink="@color/light_yellow"
                     android:textSize="18sp" />
             </android.support.design.widget.TextInputLayout>
 
@@ -133,11 +98,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:autoSizeMinTextSize="18sp"
                 android:textColorHint="@color/light_yellow"
                 app:boxStrokeColor="@color/light_yellow"
                 app:hintAnimationEnabled="true"
-
                 app:hintTextAppearance="@style/TextAppearance.AppCompat">
 
                 <android.support.design.widget.TextInputEditText
@@ -161,50 +124,42 @@
                     android:textSize="18sp" />
             </android.support.design.widget.TextInputLayout>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/login_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/password_edit_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/productsans"
+                android:text="@string/login_caption_one"
+                android:textColor="@color/light_yellow"
+                android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/sign_up_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_caption"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:fontFamily="@font/productsans"
+                android:text="@string/sign_up_head"
+                android:textColor="@color/light_yellow"
+                android:textSize="22sp" />
+
+        </RelativeLayout>
     </android.support.design.card.MaterialCardView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
-        android:orientation="horizontal"
-        android:padding="30dp"
-        android:paddingStart="50dp"
-        android:paddingEnd="50dp">
-
-        <android.support.design.button.MaterialButton
-            android:id="@+id/sign_up_cancel_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_black"
-            android:fontFamily="@font/productsans"
-            android:padding="10dp"
-            android:text="Cancel"
-            android:textAllCaps="false"
-            android:textColor="@color/light_yellow"
-            android:textSize="18sp"
-            app:cornerRadius="10dp" />
-
-        <android.support.design.button.MaterialButton
-            android:id="@+id/sign_up_confirm_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/background_black"
-            android:fontFamily="@font/productsans"
-            android:padding="10dp"
-            android:text="Confirm"
-            android:textAllCaps="false"
-            android:textColor="@color/light_yellow"
-            android:textSize="18sp"
-            app:cornerRadius="10dp" />
-
-    </LinearLayout>
+        android:layout_marginBottom="80dp"
+        android:fontFamily="@font/productsans_bold"
+        android:text="@string/motto"
+        android:textColor="@color/light_yellow"
+        android:textSize="30sp" />
 </RelativeLayout>

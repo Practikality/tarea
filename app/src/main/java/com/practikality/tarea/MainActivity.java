@@ -12,6 +12,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        startActivity(new Intent(MainActivity.this, sign_up_activity.class));
+        startActivity(new Intent(MainActivity.this, login_activity.class));
     }
 }
