@@ -4,4 +4,8 @@
     <string name="login_head">Login</string>
     <string name="login_caption_one">Not a Member?</string>
     <string name="motto">/"Getting Things Done/"</string>
+    <string name="bottom_nav_title_one">To Do</string>
+    <string name="bottom_nav_title_two">Assigned</string>
+    <string name="bottom_nav_settings">Settings</string>
+
 </resources>
