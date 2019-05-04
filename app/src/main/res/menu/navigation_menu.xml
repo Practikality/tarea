@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:title="@string/bottom_nav_title_one"
         android:id="@+id/action_bar_todo"
         android:icon="@drawable/assign_to"
+        app:showAsAction="always"
     />
 
     <item
         android:title="@string/bottom_nav_title_two"
         android:id="@+id/action_bar_assigned"
         android:icon="@drawable/assignee"
+        app:showAsAction="always"
         />
 
     <item
         android:title="@string/bottom_nav_settings"
         android:id="@+id/action_bar_settings"
         android:icon="@drawable/settings"
+        app:showAsAction="always"
         />
 </menu>
