@@ -34,9 +34,9 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
-        android:elevation="20dp"
         app:cardBackgroundColor="#261E1D"
         app:cardCornerRadius="30dp"
+        app:cardElevation="15dp"
         app:cardUseCompatPadding="true"
         app:strokeColor="@android:color/black">
 
@@ -121,22 +121,22 @@
             <android.support.design.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/password_edit_layout"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="40dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
                 android:layout_marginEnd="30dp"
                 android:layout_marginBottom="40dp"
                 android:fontFamily="@font/productsans_bold"
+                android:letterSpacing="0"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:text="Login"
                 android:textAllCaps="false"
-                android:letterSpacing="0"
                 android:textColor="@color/background_black"
                 android:textSize="22sp"
                 app:backgroundTint="@color/light_yellow"
-                app:cornerRadius="5dp" />
+                app:cornerRadius="8dp" />
 
         </RelativeLayout>
     </android.support.design.card.MaterialCardView>
@@ -160,10 +160,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/productsans_bold"
-            android:text="Sign Up."
             android:clickable="true"
+            android:fontFamily="@font/productsans_bold"
             android:onClick="gotosignup"
+            android:text="Sign Up."
             android:textColor="@color/background_black"
             android:textSize="26sp" />
     </LinearLayout>
