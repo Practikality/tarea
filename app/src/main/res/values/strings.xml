@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Tarea</string>
     <string name="sign_up_head">Sign Up</string>
+    <string name="login_head">Login</string>
+    <string name="login_caption_one">Not a Member?</string>
+    <string name="motto">/"Getting Things Done/"</string>
 </resources>
