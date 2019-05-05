@@ -15,15 +15,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".add_task_activity"></activity>
         <activity android:name=".home_activity" />
-        <activity android:name=".login_activity" />
-        <activity android:name=".sign_up_activity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".login_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".sign_up_activity" />
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
