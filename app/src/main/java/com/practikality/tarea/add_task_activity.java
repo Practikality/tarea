@@ -108,7 +108,7 @@ public class add_task_activity extends AppCompatActivity implements View.OnClick
         desc_edit_text.setText("");
 
         HashMap<String, Object> map = new HashMap<>();
-        map.put("from", getIntent().getStringExtra("from"));
+        map.put("from", from_text);
         map.put("to", to_text);
         map.put("title", title_text);
         map.put("description", desc_text);

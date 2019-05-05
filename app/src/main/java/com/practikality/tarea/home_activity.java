@@ -36,6 +36,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.practikality.tarea.adapters.TasksRecyclerAdapter;
 import com.practikality.tarea.models.Task;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -88,7 +90,7 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
             finish();
         } else {
             mRecyclerView = findViewById(R.id.tasks_rv);
-            loadTasks(firebaseUser.getUid(),"from");
+            loadTasks(firebaseUser.getUid(),"to");
         }
 
     }
@@ -123,11 +125,15 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
                                         task.setTaskTo("Rejected by " + String.valueOf(documentSnapshot.get("to")));
                                         task.setPriority("rejected");
                                     }else if(String.valueOf(documentSnapshot.get("status")).equals("done") && method.equals("to")){
-                                        task.setTaskTo(String.valueOf(documentSnapshot.get("to")));
+                                        task.setTaskTo(String.valueOf(documentSnapshot.get("from")));
                                         task.setPriority("completed");
                                     }
                                     else{
-                                        task.setTaskTo(String.valueOf(documentSnapshot.get("to")));
+                                        if(method.equals("to")){
+                                            task.setTaskTo(String.valueOf(documentSnapshot.get("from")));
+                                        }else{
+                                            task.setTaskTo(String.valueOf(documentSnapshot.get("to")));
+                                        }
                                         task.setPriority(String.valueOf(documentSnapshot.get("priority")));
                                     }
                                     task.setTitle(String.valueOf(documentSnapshot.get("title")));
@@ -168,10 +174,12 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         switch (item.getItemId()) {
             case R.id.action_bar_todo:
-                loadTasks(firebaseUser.getUid(),"from");
+                loadTasks(firebaseUser.getUid(),"to");
+                ((TextView) findViewById(R.id.home_title)).setText("My tasks");
                 break;
             case R.id.action_bar_assigned:
-                loadTasks(firebaseUser.getUid(),"to");
+                loadTasks(firebaseUser.getUid(),"from");
+                ((TextView) findViewById(R.id.home_title)).setText("Outsourced");
                 break;
             case R.id.action_bar_settings:
                 break;

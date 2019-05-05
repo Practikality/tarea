@@ -6,11 +6,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".home_activity">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/home_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:text="My tasks"
+        android:fontFamily="@font/productsans_bold"
+        android:textColor="@color/background_black"
+        android:textSize="30sp"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/tasks_rv"
+        android:layout_below="@id/home_title"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
