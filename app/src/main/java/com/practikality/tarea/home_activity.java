@@ -14,15 +14,18 @@ import android.support.design.card.MaterialCardView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -42,7 +45,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class home_activity extends AppCompatActivity implements TasksRecyclerAdapter.OnTaskListener {
+public class home_activity extends AppCompatActivity implements TasksRecyclerAdapter.OnTaskListener, GestureDetector.OnGestureListener {
 
     public String mMethod;
     BottomNavigationView bottomNavigationView;
@@ -58,6 +61,7 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
     public boolean usernamenotsetyet;
     private ProgressDialog mProgress;
     public String mUid;
+    private GestureDetectorCompat gestureDetectorCompat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,8 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
             }
         });
 
+        this.gestureDetectorCompat = new GestureDetectorCompat(this, this);
+
         mAuth = FirebaseAuth.getInstance();
         mTasks = new ArrayList<>();
         mTaskIDS = new ArrayList<>();
@@ -93,6 +99,55 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
             loadTasks(firebaseUser.getUid(),"to");
         }
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event){
+        this.gestureDetectorCompat.onTouchEvent(event);
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean onDown(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        if (e2.getY() - e1.getY() > 50){
+            //swipe down
+            loadTasks(mUid,mMethod);
+            return true;
+        } else if ( e2.getX() - e1.getX() > 50){
+            //swipe right
+
+            return true;
+        } else if ( e1.getX() - e2.getX() > 50) {
+            //swipe left
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void loadTasks(String userid, final String method) {
