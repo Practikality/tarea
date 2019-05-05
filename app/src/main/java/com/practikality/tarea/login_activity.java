@@ -29,6 +29,7 @@ public class login_activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private ProgressDialog mProgress;
+    public String userEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,7 @@ public class login_activity extends AppCompatActivity {
                         for (DocumentSnapshot documentSnapshot : documentSnapshotList) {
                             String emailaddress = String.valueOf(documentSnapshot.get("email"));
                             System.out.println(emailaddress);
+                            userEmail = emailaddress;
                             tryloggingin(emailaddress, password);
                         }
                     } else {

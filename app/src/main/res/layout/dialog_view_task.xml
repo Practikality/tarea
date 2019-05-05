@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#eee"
+    android:id="@+id/dialog_card_view"
+    app:cardUseCompatPadding="true"
+    android:elevation="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/dialog_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20d0"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="40dp"
+            android:textColor="#000"
+            android:fontFamily="@font/productsans"
+            android:textSize="18sp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="20dp">
+            <android.support.design.button.MaterialButton
+                android:id="@+id/dialog_cancel_button"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/productsans_bold"
+                android:padding="10dp"
+                android:text="Reject"
+                android:textAllCaps="false"
+                android:textColor="@color/background_black"
+                android:textSize="22sp"
+                app:backgroundTint="#fff"
+                app:cornerRadius="8dp"
+                app:strokeColor="@color/background_black"
+                app:strokeWidth="2dp" />
+
+            <android.support.design.button.MaterialButton
+                android:id="@+id/dialog_confirm_button"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/background_black"
+                android:fontFamily="@font/productsans_bold"
+                android:padding="10dp"
+                android:text="Done?"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:layout_alignParentEnd="true"
+                android:textSize="22sp"
+                app:cornerRadius="8dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.design.card.MaterialCardView>
