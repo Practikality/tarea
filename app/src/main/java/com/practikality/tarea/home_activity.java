@@ -179,6 +179,9 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
                                     if(String.valueOf(documentSnapshot.get("status")).equals("rejected") && method.equals("from")){
                                         task.setTaskTo("Rejected by " + String.valueOf(documentSnapshot.get("to")));
                                         task.setPriority("rejected");
+                                    }else if(String.valueOf(documentSnapshot.get("status")).equals("done") && method.equals("from")){
+                                        task.setTaskTo("Done by " + String.valueOf(documentSnapshot.get("to")));
+                                        task.setPriority(String.valueOf(documentSnapshot.get("priority")));
                                     }else if(String.valueOf(documentSnapshot.get("status")).equals("done") && method.equals("to")){
                                         task.setTaskTo(String.valueOf(documentSnapshot.get("from")));
                                         task.setPriority("completed");
@@ -355,7 +358,6 @@ public class home_activity extends AppCompatActivity implements TasksRecyclerAda
                         if(mMethod.equals("from")){
                             makeSnackbar("Nudge delivered");
                             alertDialog.dismiss();
-                            loadTasks(mUid,mMethod);
                         }else{
                             db.collection("tasks").document(taskID).update("status","done").addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
